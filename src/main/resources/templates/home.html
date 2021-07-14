@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Home Page</h1>
+    <hr>
+    <div>
+        <a sec:authorize="isAnonymous()" th:href="@{/login}">로그인</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/logout}">로그아웃</a>
+        <a sec:authorize="isAnonymous()" th:href="@{/signup}">회원가입</a>
+        <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/welcome}">어서오세요</a>
+
+
+    </div>
+
+</body>
+</html>
